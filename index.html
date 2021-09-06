@@ -12,12 +12,12 @@
     <section class="m-4">
         <div class="container overflow-hidden">
             <div class="row gy-5">
-              <div class="col-6">
+              <div class="col-md-6 col-sm-12">
                 <div class="p-3">
                     <img class="img-fluid" src="images/mac.png" alt="">
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6 col-sm-12">
                 <div class="p-3">
                     <div>
                         <h1>Customize your Blue 24-inch<bar>
@@ -49,7 +49,7 @@
                             <tbody>
                               <tr>
                                 <td>Best Price</td>
-                                <td>$ <span>1299</span></td> 
+                                <td>$<span id="best-price">1299</span></td> 
                               </tr>
                               <tr>
                                 <td>Extra Merory Cost</td>
@@ -72,8 +72,10 @@
                           </table>
                     </div>
                     <div >
-                        <input class="form-control w-50 d-inline" type="text">
-                        <button type="button" class="btn btn-danger">Apply</button>
+                        <label class="form-label d-block">Add Promo code</label>
+                        <input id="discount-input" class="form-control w-50 d-inline" type="text">
+                        <button id="discount-button" type="button" class="btn btn-danger">Apply</button>
+                        <p id="error-copun"></p>
                     </div>
                 </div>
               </div>
@@ -82,8 +84,9 @@
             </div>
           </div>
     </section>
+    <hr>
     <section>
-        <h1 class="text-center">Total: $<span>1299</span></h1>
+        <h1 class="text-center">Total: $<span id="final-price">1299</span></h1>
     </section>
     
 

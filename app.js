@@ -1,54 +1,64 @@
 // Memory Button henler 
 document.getElementById('16GB-memory-button')
 .addEventListener('click' , function (){
-    const totalMemoryCost =document.getElementById('memory-price');
-    totalMemoryCost.innerText = 180 ;
-    const totalMemoryCost =document.getElementById('memory-price');
-    const totalMemoryCost1 =document.getElementById('delevery-cost');
-    const totalMemoryCost2 =document.getElementById('stroage-price');
-    const totalCollect = document.getElementById('total-price');
+    getPrice('memory-price',180)
+    updatePrice();
+    // const totalMemoryCost =document.getElementById('memory-price');
+    // const totalMemoryCost1 =document.getElementById('delevery-cost');
+    // const totalMemoryCost2 =document.getElementById('stroage-price');
+    // const totalCollect = document.getElementById('total-price');
 
-    const totalPrice = parseFloat(totalMemoryCost.innerText) + parseFloat(totalMemoryCost1.innerText) +parseFloat(totalMemoryCost2.innerText) + parseFloat(totalCollect.innerText);
+    // const totalPrice = parseFloat(totalMemoryCost.innerText) + parseFloat(totalMemoryCost1.innerText) +parseFloat(totalMemoryCost2.innerText) + parseFloat(totalCollect.innerText);
 
-    totalCollect.innerText = totalCollect ;
+    // totalCollect.innerText = totalCollect ;
 })
 //memory 8GB button
 document.getElementById('8GB-memory-button')
 .addEventListener('click' , function (){
-    const totalMemoryCost =document.getElementById('memory-price');
-    totalMemoryCost.innerText = 0 ;
+    getPrice('memory-price', 0)
+    updatePrice();
 })
 // storage item 
 // 256GB memory 
 document.getElementById('256GB-storage-button')
 .addEventListener('click' , function (){
-    const totalMemoryCost =document.getElementById('stroage-price');
-    totalMemoryCost.innerText = 0;
+    getPrice('stroage-price', 0);
+    updatePrice();
 })
 // 512GB SSD 
 document.getElementById('512GB-storage-button')
 .addEventListener('click' , function (){
-    const totalMemoryCost =document.getElementById('stroage-price');
-    totalMemoryCost.innerText = 100;
+    // const totalMemoryCost =document.getElementById('stroage-price');
+    // totalMemoryCost.innerText = 100;
+    getPrice('stroage-price', 100)
+    updatePrice();
 })
 // 1TB SSd 
 document.getElementById('1TB-storage-button')
 .addEventListener('click' , function (){
-    const totalMemoryCost =document.getElementById('stroage-price');
-    totalMemoryCost.innerText = 180;
+    // const totalMemoryCost =document.getElementById('stroage-price');
+    // totalMemoryCost.innerText = 180;
+    getPrice('stroage-price', 180)
+    updatePrice();
 })
 // Choose your delivery option 
 document.getElementById('free-delivery-button')
 .addEventListener('click' , function (){
-    const totalMemoryCost =document.getElementById('delevery-cost');
-    totalMemoryCost.innerText = 0;
+    // const totalMemoryCost =document.getElementById('delevery-cost');
+    // totalMemoryCost.innerText = 0;
+    getPrice('delevery-cost', 0)
+    updatePrice();
 })
 // cost delivery 
 document.getElementById('cost-delevery-button')
 .addEventListener('click' , function (){
-    const totalMemoryCost =document.getElementById('delevery-cost');
-    totalMemoryCost.innerText = 20;
+    getPrice('delevery-cost', 20)
+    updatePrice();
 })
+function getPrice(id , price){
+    const totalMemoryCost =document.getElementById(id);
+    totalMemoryCost.innerText = price;
+}
 
 // total cost 
 // const totalMemoryCost =document.getElementById('memory-price');
@@ -59,4 +69,34 @@ document.getElementById('cost-delevery-button')
 // const totalPrice = parseFloat(totalMemoryCost.innerText) + parseFloat(totalMemoryCost1.innerText) +parseFloat(totalMemoryCost2.innerText) + parseFloat(totalCollect.innerText);
 
 // totalCollect.innerText = totalCollect ;
+function updatePrice(){
+    const memoryCost =document.getElementById('memory-price');
+    const deleveryCost =document.getElementById('delevery-cost');
+    const storageCost =document.getElementById('stroage-price');
+    const bestPrice = document.getElementById('best-price');
+
+    const totalPrice = parseFloat(memoryCost.innerText) + parseFloat(deleveryCost.innerText) +parseFloat(storageCost.innerText) + parseFloat(bestPrice.innerText);
+    const total = document.getElementById('total-price')
+    total.innerText =totalPrice ;
+    const finalPrice = document.getElementById('final-price')
+    finalPrice.innerText = totalPrice;
+}
+ const discoundButtom = document.getElementById('discount-button')
+ discoundButtom.addEventListener('click' , function(){
+     const input = document.getElementById('discount-input');
+     const inputText = input.value;
+     if(inputText == "stevkaku"){
+         const final =document.getElementById('final-price')
+         const finalText1 = final.innerText;
+         const discountPrice = (parseFloat(finalText1)* 20) / 100 ;
+         const newPrice = parseFloat(finalText1) - discountPrice ;
+         final.innerText = newPrice;
+         input.value = " " ;
+
+     }
+    //  else{
+    //     document.getElementById('error-copun').innerText ='There was an error validating your code.'
+    //  }
+     input.value = " " ;
+ })
 
