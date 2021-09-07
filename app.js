@@ -3,14 +3,6 @@ document.getElementById('16GB-memory-button')
 .addEventListener('click' , function (){
     getPrice('memory-price',180)
     updatePrice();
-    // const totalMemoryCost =document.getElementById('memory-price');
-    // const totalMemoryCost1 =document.getElementById('delevery-cost');
-    // const totalMemoryCost2 =document.getElementById('stroage-price');
-    // const totalCollect = document.getElementById('total-price');
-
-    // const totalPrice = parseFloat(totalMemoryCost.innerText) + parseFloat(totalMemoryCost1.innerText) +parseFloat(totalMemoryCost2.innerText) + parseFloat(totalCollect.innerText);
-
-    // totalCollect.innerText = totalCollect ;
 })
 //memory 8GB button
 document.getElementById('8GB-memory-button')
@@ -28,24 +20,18 @@ document.getElementById('256GB-storage-button')
 // 512GB SSD 
 document.getElementById('512GB-storage-button')
 .addEventListener('click' , function (){
-    // const totalMemoryCost =document.getElementById('stroage-price');
-    // totalMemoryCost.innerText = 100;
     getPrice('stroage-price', 100)
     updatePrice();
 })
 // 1TB SSd 
 document.getElementById('1TB-storage-button')
 .addEventListener('click' , function (){
-    // const totalMemoryCost =document.getElementById('stroage-price');
-    // totalMemoryCost.innerText = 180;
     getPrice('stroage-price', 180)
     updatePrice();
 })
 // Choose your delivery option 
 document.getElementById('free-delivery-button')
 .addEventListener('click' , function (){
-    // const totalMemoryCost =document.getElementById('delevery-cost');
-    // totalMemoryCost.innerText = 0;
     getPrice('delevery-cost', 0)
     updatePrice();
 })
@@ -55,20 +41,12 @@ document.getElementById('cost-delevery-button')
     getPrice('delevery-cost', 20)
     updatePrice();
 })
+// spacefict price in different item 
 function getPrice(id , price){
     const totalMemoryCost =document.getElementById(id);
     totalMemoryCost.innerText = price;
 }
-
-// total cost 
-// const totalMemoryCost =document.getElementById('memory-price');
-// const totalMemoryCost1 =document.getElementById('delevery-cost');
-// const totalMemoryCost2 =document.getElementById('stroage-price');
-// const totalCollect = document.getElementById('total-price');
-
-// const totalPrice = parseFloat(totalMemoryCost.innerText) + parseFloat(totalMemoryCost1.innerText) +parseFloat(totalMemoryCost2.innerText) + parseFloat(totalCollect.innerText);
-
-// totalCollect.innerText = totalCollect ;
+// maint funtion all price show 
 function updatePrice(){
     const memoryCost =document.getElementById('memory-price');
     const deleveryCost =document.getElementById('delevery-cost');
@@ -81,11 +59,14 @@ function updatePrice(){
     const finalPrice = document.getElementById('final-price')
     finalPrice.innerText = totalPrice;
 }
+
+// input value and cupon item 
  const discoundButtom = document.getElementById('discount-button')
  discoundButtom.addEventListener('click' , function(){
      const input = document.getElementById('discount-input');
      const inputText = input.value;
-     if(inputText == "stevkaku"){
+     console.log( typeof inputText);
+     if(inputText == "stevekaku"){
          const final =document.getElementById('final-price')
          const finalText1 = final.innerText;
          const discountPrice = (parseFloat(finalText1)* 20) / 100 ;
@@ -94,9 +75,9 @@ function updatePrice(){
          input.value = " " ;
 
      }
-    //  else{
-    //     document.getElementById('error-copun').innerText ='There was an error validating your code.'
-    //  }
+     else{
+        document.getElementById('error-copun').innerText ='There was an error validating your code.'
+     }
      input.value = " " ;
  })
 

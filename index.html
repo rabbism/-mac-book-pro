@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mac Book </title>
+    <!-- style item -->
     <link rel="stylesheet" href="style.css">
+    <!-- bootstap style items -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
@@ -42,10 +44,8 @@
                         <button id="cost-delevery-button" type="button" class="btn btn-outline-secondary">Friday,Aug 21 Delivery charge $20</button>
                     </div>
 
-
-
                     <div class="mt-4">
-                        <table class="table">
+                        <table class="table fw-bold">
                             <tbody>
                               <tr>
                                 <td>Best Price</td>
@@ -59,7 +59,7 @@
                                 <td>Extra Storage Cost</td>
                                 <td>$ <span id="stroage-price">0</span></td>>
                               </tr>
-                              <tr> 
+                              <tr class="border-top border-dark"> 
                                 <td>Delivery charge</td>
                                 <td>$ <span id="delevery-cost">0</span></td>
                               </tr>
@@ -73,9 +73,9 @@
                     </div>
                     <div >
                         <label class="form-label d-block">Add Promo code</label>
-                        <input id="discount-input" class="form-control w-50 d-inline" type="text">
-                        <button id="discount-button" type="button" class="btn btn-danger">Apply</button>
-                        <p id="error-copun"></p>
+                        <input id="discount-input" class="form-control w-50 d-inline " type="text">
+                        <button id="discount-button" type="button" class="btn btn-danger m-3">Apply</button>
+                        <p id="error-copun" class="text-danger"></p>
                     </div>
                 </div>
               </div>
